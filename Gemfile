@@ -7,6 +7,8 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'capybara'
 
 group :development do
   gem 'byebug'

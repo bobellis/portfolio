@@ -1,13 +1,15 @@
 <h1><%=@skill.name%></h1>
-<h2><%=@skill.description%></h2>
+<h2>Description: <%=@skill.description%></h2>
 
 <% if @skill.projects.any? %>
+<br>
 <h4>Here are some projects I've worked on in  <%=@skill.name%></h4>
 <ul>
   <% @skill.projects.each do |project| %>
   <li>
-    <%= project.name  %> :
-    <%= project.description %>
+    <h3>Name: <%= project.name  %> :</h3>
+    <h4>Description: <%= project.description %></h4>
+    <h4>Link: <a href="<%=project.link%>"> <%=project.link%> </a></h4>
     <br>
     <%= link_to "Edit Project", edit_skill_project_path(@skill, project) %> |
     <%= link_to "Delete Project", skill_project_path(@skill, project), :data => {:confirm => "Are you sure?", :method => "delete"} %>
@@ -15,7 +17,8 @@
   <% end %>
 </ul>
 <% end %>
-<%= link_to "Add Project", new_skill_project_path(@skill) %>
+<p><%= link_to "Add Project", new_skill_project_path(@skill), :class => 'btn btn-success' %></p>
 
-<p><%= link_to "Edit", edit_skill_path(@skill) %></p>
-<p><%= link_to "Delete", skill_path(@skill), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
+<p><%= link_to "Edit", edit_skill_path(@skill), :class => 'btn btn-info' %></p>
+
+<p><%= link_to "Delete", skill_path(@skill), :data => {:confirm => "Are you sure?", :method => "delete"}, :class => 'btn btn-danger' %></p>
