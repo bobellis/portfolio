@@ -10,20 +10,32 @@ class SkillsController < ApplicationController
   end
 
   def new
+    @skill = Skill.new
     render :new
   end
 
   def create
     @skill = Skill.new(skill_params)
     if @skill.save
-      redirect_to skill_path
+      redirect_to skills_path
     else
       render :new
     end
   end
 
+  def edit
+      @skill = Skill.find(params[:id])
+      render :edit
+  end
+
+  def destroy
+    @skill = Skill.find(params[:id])
+    @skill.destroy
+    redirect_to skills_path
+  end
+
   private
-  def list_params
+  def skill_params
     params.require(:skill).permit(:name, :description)
   end
 end
