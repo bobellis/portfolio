@@ -20,7 +20,7 @@
 
 <ul>
   <% @skills.each do |skill| %>
-    <li><%= link_to skill.name, skill_path(skill) %></li>
+    <li><%= link_to skill.name, skill_path(skill), :class => 'btn btn-skill' %><br><br></li>
     <% end %>
 </ul>
 <% if current_user.admin %>
