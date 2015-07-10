@@ -7,16 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
   <% if current_user %>
-        <%= link_to("Log Out", destroy_user_session_path, :method => :delete, :class => "btn btn-warning") %>
+        <%= link_to("Log Out", destroy_user_session_path, :method => :delete, :class => "btn btn-custom btn-xs") %>
         You are logged in as <%= current_user.email %>
     <% else %>
         <%= link_to "Login", new_user_session_path, :class => "btn btn-success" %>
         <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-primary" %>
     <% end %>
+  </div>
+</nav>
 
+<div class="container yield-container">
 <%= yield %>
 <p><%= link_to "Head back", skills_path, class: 'btn btn-primary'%></p>
+</div>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 

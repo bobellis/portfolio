@@ -17,5 +17,49 @@
  *= require_self
  */
 
- body { margin: 20px;
-        padding: 20px;}
+ body {
+   background-color: #E9E0D6;
+ }
+
+.navbar {
+  background-color: #29ABA4;
+  opacity: .9;
+  color: black;
+  font-size: 20px;
+  padding-top: .5em;
+}
+
+.btn-custom {
+  background: #EB7260;
+  color: white;
+}
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+.yield-container{
+
+}
