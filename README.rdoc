@@ -2,6 +2,8 @@
 
 By Bob Ellis (<a href="https://github.com/bobellis" target="#">GitHub</a>)
 
+Hosted on Heroku at https://mysterious-falls-1595.herokuapp.com/
+
 @ Epicodus Programming School, Portland, OR
 
 GNU General Public License, version 3 (see below). Copyright (c) 2015 Bob Ellis.

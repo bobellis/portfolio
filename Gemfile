@@ -11,6 +11,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'capybara'
 gem 'devise'
 gem 'factory_girl_rails'
+gem 'simplecov', require: false
 
 group :development do
   gem 'byebug'
