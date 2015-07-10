@@ -23,8 +23,9 @@
     <li><%= link_to skill.name, skill_path(skill) %></li>
     <% end %>
 </ul>
-
+<% if current_user.admin %>
 <p><%=link_to "New Skill", new_skill_path, :class => 'btn btn-info'%></p>
+<% end %>
 
     </body>
 </html>

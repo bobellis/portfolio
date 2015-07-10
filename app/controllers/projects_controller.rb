@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!
   def new
     @skill = Skill.find(params[:skill_id])
     @project = @skill.projects.new

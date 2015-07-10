@@ -11,14 +11,18 @@
     <h4>Description: <%= project.description %></h4>
     <h4>Link: <a href="<%=project.link%>"> <%=project.link%> </a></h4>
     <br>
+    <% if current_user.admin %>
     <%= link_to "Edit Project", edit_skill_project_path(@skill, project) %> |
     <%= link_to "Delete Project", skill_project_path(@skill, project), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+    <% end %>
   </li>
   <% end %>
 </ul>
 <% end %>
+<% if current_user.admin %>
 <p><%= link_to "Add Project", new_skill_project_path(@skill), :class => 'btn btn-success' %></p>
 
 <p><%= link_to "Edit", edit_skill_path(@skill), :class => 'btn btn-info' %></p>
 
 <p><%= link_to "Delete", skill_path(@skill), :data => {:confirm => "Are you sure?", :method => "delete"}, :class => 'btn btn-danger' %></p>
+<% end %>

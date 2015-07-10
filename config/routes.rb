@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root :to => 'skills#index'
+    devise_scope :user do
+      authenticated :user do
+        root :to => 'skills#index', as: :authenticated_root
+      end
+      unauthenticated :user do
+        root :to => 'devise/registrations#new', as: :unauthenticated_root
+      end
+    end
   resources :skills do
     resources :projects, :except => [:show, :index]
   end

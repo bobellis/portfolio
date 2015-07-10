@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_filter :authenticate_user!
   def index
     @skills = Skill.all
     render :index
