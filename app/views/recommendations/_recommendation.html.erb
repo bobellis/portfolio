@@ -1,0 +1,9 @@
+<div id="recommendation<%= recommendation.id %>">
+  <%= User.find(recommendation.user_id).email %> says:
+  <%= recommendation.body %>
+  <% if recommendation.user_id == current_user.id %>
+  <%= link_to "Delete", recommendation_path(recommendation), method: :delete, remote: true, class: "btn btn-danger btn-xs" %>
+  <% end %>
+  <br>
+  <br>
+</div>

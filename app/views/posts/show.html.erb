@@ -1,0 +1,15 @@
+<div class="col-sm-6" id="posts<%= @post.id %>">
+<h1><%= @post.title %></h1>
+<br>
+<%= @post.body %>
+</div>
+
+<div class="col-sm-6" id="posts<%= @post.id %>comments">
+  <%= link_to "New Comment", new_post_comment_path(@post), id: "new_comment_link", remote: true %>
+  <% if @post.comments.any? %>
+    <% @post.comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
+  <% end %>
+
+</div>

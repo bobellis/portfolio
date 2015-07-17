@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @recommendation %>
+
+<%= form_for @recommendation, remote: true do |f| %>
+  <%= f.text_area :body %>
+  <br>
+  <%= f.submit %>
+<% end %>

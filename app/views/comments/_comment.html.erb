@@ -1,0 +1,10 @@
+<div id="comment<%= comment.id %>">
+  <%= User.find(comment.user_id).email %> says:
+  <%= comment.comment_title %>
+  <%= comment.comment_body %>
+  <% if comment.user_id == current_user.id %>
+  <%= link_to "Delete", post_comment_path(comment,comment.id), method: :delete, remote: true, class: "btn btn-danger btn-xs" %>
+  <% end %>
+  <br>
+  <br>
+</div>

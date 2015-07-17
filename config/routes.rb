@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :skills do
     resources :projects, :except => [:show, :index]
   end
+  resources :posts do
+    resources :comments
+  end
+  resources :recommendations
 end

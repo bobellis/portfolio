@@ -1,0 +1,10 @@
+<h1> Recommendations </h1>
+
+<div class="col-sm-6" id="recommendations">
+  <%= link_to "New Recommendation", new_recommendation_path, id: "new_recommendation_link", remote: true, class: "btn btn-skill btn-xs" %>
+  <% if @recommendations.any? %>
+    <% @recommendations.each do |recommendation| %>
+      <%= render recommendation %>
+    <% end %>
+  <% end %>
+</div>
